@@ -1,3 +1,8 @@
+from catgirl_viewer.main import run
+
+
+if __name__ == "__main__":
+    run()
 import io
 import os
 import random
