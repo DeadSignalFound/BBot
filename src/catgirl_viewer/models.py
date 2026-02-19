@@ -1,3 +1,4 @@
+from dataclasses import dataclass, field
 from dataclasses import dataclass
 
 
@@ -6,6 +7,8 @@ class ProviderConfig:
     name: str
     endpoint: str
     response_path: str
+    enabled: bool = True
+    headers: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

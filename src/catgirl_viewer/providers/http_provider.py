@@ -21,6 +21,11 @@ class ProviderClient:
         self.image_timeout_seconds = image_timeout_seconds
 
     def fetch(self, provider: ProviderConfig) -> ProviderImage:
+        response = requests.get(
+            provider.endpoint,
+            headers=provider.headers,
+            timeout=self.timeout_seconds,
+        )
         response = requests.get(provider.endpoint, timeout=self.timeout_seconds)
         response.raise_for_status()
 

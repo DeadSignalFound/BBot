@@ -35,6 +35,16 @@ def load_config(config_path: str | None = None) -> AppConfig:
             name=item["name"],
             endpoint=item["endpoint"],
             response_path=item["response_path"],
+            enabled=item.get("enabled", True),
+            headers=item.get("headers", {}),
+        )
+        for item in raw["providers"]
+        if item.get("enabled", True)
+    ]
+
+    if not providers:
+        raise ValueError("No enabled providers found in configuration.")
+
         )
         for item in raw["providers"]
     ]
