@@ -1,0 +1,32 @@
+{
+  "app": {
+    "title": "Catgirl Viewer"
+  },
+  "window": {
+    "width": 1024,
+    "height": 768,
+    "min_width": 760,
+    "min_height": 580
+  },
+  "network": {
+    "request_timeout_seconds": 15,
+    "image_timeout_seconds": 20
+  },
+  "runtime": {
+    "default_random_provider": false,
+    "image_padding": 20,
+    "save_default_extension": ".jpg"
+  },
+  "providers": [
+    {
+      "name": "waifu.pics",
+      "endpoint": "https://api.waifu.pics/sfw/neko",
+      "response_path": "url"
+    },
+    {
+      "name": "nekos.best",
+      "endpoint": "https://nekos.best/api/v2/neko",
+      "response_path": "results.0.url"
+    }
+  ]
+}
