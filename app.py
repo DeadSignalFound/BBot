@@ -17,7 +17,17 @@ except ModuleNotFoundError as exc:
     ) from exc
 
 import requests
-from PIL import Image, ImageTk
+
+try:
+    from PIL import Image, ImageTk
+except ImportError as exc:
+    raise SystemExit(
+        "Pillow with ImageTk support is required.\n"
+        "If you're using a virtual environment, activate it and run:\n"
+        "  pip install -r requirements.txt\n"
+        "If you're using system Python on Debian/Ubuntu, you may need:\n"
+        "  sudo apt-get install python3-pil python3-pil.imagetk\n"
+    ) from exc
 
 
 class CatgirlViewer:
