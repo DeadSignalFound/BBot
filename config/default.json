@@ -1,0 +1,73 @@
+{
+  "app": {
+    "title": "Catgirl Viewer"
+  },
+  "window": {
+    "width": 1024,
+    "height": 768,
+    "min_width": 760,
+    "min_height": 580
+  },
+  "network": {
+    "request_timeout_seconds": 15,
+    "image_timeout_seconds": 20
+  },
+  "runtime": {
+    "default_random_provider": true,
+    "image_padding": 20,
+    "save_default_extension": ".jpg"
+  },
+  "providers": [
+    {
+      "name": "waifu.pics /sfw/neko",
+      "endpoint": "https://api.waifu.pics/sfw/neko",
+      "response_path": "url",
+      "enabled": true
+    },
+    {
+      "name": "nekos.best /api/v2/neko",
+      "endpoint": "https://nekos.best/api/v2/neko",
+      "response_path": "results.0.url",
+      "enabled": true
+    },
+    {
+      "name": "waifu.im /search?included_tags=neko",
+      "endpoint": "https://api.waifu.im/search?included_tags=neko",
+      "response_path": "images.0.url",
+      "enabled": true,
+      "headers": {
+        "Accept-Version": "v5"
+      }
+    },
+    {
+      "name": "nekos.life /api/v2/img/neko",
+      "endpoint": "https://nekos.life/api/v2/img/neko",
+      "response_path": "url",
+      "enabled": true
+    },
+    {
+      "name": "nekobot.xyz /api/image?type=neko",
+      "endpoint": "https://nekobot.xyz/api/image?type=neko",
+      "response_path": "message",
+      "enabled": true
+    },
+    {
+      "name": "nekosia.cat /api/v1/images/catgirl (experimental)",
+      "endpoint": "https://api.nekosia.cat/api/v1/images/catgirl",
+      "response_path": "image.original.url",
+      "enabled": false
+    },
+    {
+      "name": "nekos.moe /api/v1/random/image (experimental)",
+      "endpoint": "https://nekos.moe/api/v1/random/image?nsfw=false&count=1",
+      "response_path": "images.0.url",
+      "enabled": false
+    },
+    {
+      "name": "nekidev /api/image/random?categories=catgirl (experimental)",
+      "endpoint": "https://nekos.nekidev.com/api/image/random?categories=catgirl&count=1",
+      "response_path": "data.0.url",
+      "enabled": false
+    }
+  ]
+}
