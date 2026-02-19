@@ -26,6 +26,7 @@ class ProviderClient:
             headers=provider.headers,
             timeout=self.timeout_seconds,
         )
+        response = requests.get(provider.endpoint, timeout=self.timeout_seconds)
         response.raise_for_status()
 
         payload = response.json()

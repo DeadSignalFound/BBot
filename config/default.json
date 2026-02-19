@@ -14,6 +14,7 @@
   },
   "runtime": {
     "default_random_provider": true,
+    "default_random_provider": false,
     "image_padding": 20,
     "save_default_extension": ".jpg"
   },
@@ -68,6 +69,14 @@
       "endpoint": "https://nekos.nekidev.com/api/image/random?categories=catgirl&count=1",
       "response_path": "data.0.url",
       "enabled": false
+      "name": "waifu.pics",
+      "endpoint": "https://api.waifu.pics/sfw/neko",
+      "response_path": "url"
+    },
+    {
+      "name": "nekos.best",
+      "endpoint": "https://nekos.best/api/v2/neko",
+      "response_path": "results.0.url"
     }
   ]
 }

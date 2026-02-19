@@ -45,6 +45,10 @@ def load_config(config_path: str | None = None) -> AppConfig:
     if not providers:
         raise ValueError("No enabled providers found in configuration.")
 
+        )
+        for item in raw["providers"]
+    ]
+
     return AppConfig(
         app_title=raw["app"]["title"],
         window_width=raw["window"]["width"],
