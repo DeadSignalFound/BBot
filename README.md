@@ -31,6 +31,7 @@ The app rotates through these endpoints:
 
 - Python 3.9+
 - Internet connection
+- Tkinter (provided by your OS, not pip)
 
 ## Installation
 
@@ -96,6 +97,7 @@ py app.py
 ```text
 BBot/
 ├── app.py
+├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
@@ -110,11 +112,21 @@ BBot/
 
 ### Tkinter error on Linux
 
-Install Tk support from your distro packages, for example:
+Tkinter is not available via pip. Install it from your distro packages, for example:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y python3-tk
+```
+
+Other distros:
+
+```bash
+# Fedora
+sudo dnf install -y python3-tkinter
+
+# Arch
+sudo pacman -S tk
 ```
 
 ### SSL/requests errors

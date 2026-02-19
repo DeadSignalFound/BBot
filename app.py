@@ -1,9 +1,20 @@
 import io
 import os
 import random
-import tkinter as tk
 from datetime import datetime
-from tkinter import filedialog, messagebox
+
+try:
+    import tkinter as tk
+    from tkinter import filedialog, messagebox
+except ModuleNotFoundError as exc:
+    raise SystemExit(
+        "Tkinter is not available.\n"
+        "Install it via your OS package manager (not pip).\n"
+        "Examples:\n"
+        "  Ubuntu/Debian: sudo apt-get install python3-tk\n"
+        "  Fedora: sudo dnf install python3-tkinter\n"
+        "  Arch: sudo pacman -S tk\n"
+    ) from exc
 
 import requests
 from PIL import Image, ImageTk
